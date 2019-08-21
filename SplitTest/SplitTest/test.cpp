@@ -63,3 +63,37 @@ TEST(SplitTestCase, StringtDelimiterAloneTest) {
 	EXPECT_EQ(result[0], "a");
 	EXPECT_EQ(result[1], "bd");
 }
+
+TEST(SplitTestCase, StringtDelimiterEmptyStringTest) {
+	std::vector<std::string> result = SplitTest::split("", ",");
+	EXPECT_EQ(result.size(), 0);
+}
+
+TEST(SplitTestCase, StringtDelimiterOneDelimiterAloneTest) {
+	std::vector<std::string> result = SplitTest::split(",", ",");
+	EXPECT_EQ(result.size(), 0);
+}
+
+TEST(SplitTestCase, StringtDelimiterMultipleDelimiterAloneTest) {
+	std::vector<std::string> result = SplitTest::split(",,,,,", ",");
+	EXPECT_EQ(result.size(), 0);
+}
+
+TEST(SplitTestCase, StringtDelimiterCornerCaseLeftDelimiterAloneTest) {
+	std::vector<std::string> result = SplitTest::split("a,", ",");
+	EXPECT_EQ(result.size(), 1);
+	EXPECT_EQ(result[0], "a");
+}
+
+TEST(SplitTestCase, StringtDelimiterCornerCaseRighttDelimiterAloneTest) {
+	std::vector<std::string> result = SplitTest::split(",a", ",");
+	EXPECT_EQ(result.size(), 1);
+	EXPECT_EQ(result[0], "a");
+}
+
+TEST(SplitTestCase, StringtDelimiterCornerCaseRighttDelimiterSeparationTest) {
+	std::vector<std::string> result = SplitTest::split("b,a,,c,,", ",,");
+	EXPECT_EQ(result.size(), 2);
+	EXPECT_EQ(result[0], "b,a");
+	EXPECT_EQ(result[1], "c");
+}
