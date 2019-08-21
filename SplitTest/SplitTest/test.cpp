@@ -61,5 +61,5 @@ TEST(SplitTestCase, StringtDelimiterAloneTest) {
 	std::vector<std::string> result = SplitTest::split("abcbd", "bc");
 	EXPECT_EQ(result.size(), 2);
 	EXPECT_EQ(result[0], "a");
-	EXPECT_EQ(result[0], "bd");
+	EXPECT_EQ(result[1], "bd");
 }
