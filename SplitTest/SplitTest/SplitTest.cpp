@@ -12,18 +12,18 @@ std::vector<std::string> SplitTest::split(std::string text, std::string delimite
 	std::vector<std::string> result;
 	int len = text.length();
 	std::string word;
-	for (int i = 0; i < len; i++) {
-		std::string possibleDelimiter{ text.substr(i, delimiter.length())};
-		char next = text.at(i);
+	for (int nextCharPos = 0; nextCharPos < len; ++nextCharPos) {
+		std::string possibleDelimiter{ text.substr(nextCharPos, delimiter.length())};
+		char nextChar = text.at(nextCharPos);
 		if (possibleDelimiter != delimiter) {
-			word.push_back(next);
+			word.push_back(nextChar);
 		}
 		else {
 			if (!word.empty()) {
 				result.push_back(word);
 				word.clear();
 			}
-			i += delimiter.length() - 1;
+			nextCharPos += delimiter.length() - 1;
 		}
 	}
 	if (!word.empty()) {
