@@ -10,9 +10,9 @@ std::vector<std::string> SplitTest::split(std::string text, char delimiter)
 std::vector<std::string> SplitTest::split(std::string text, std::string delimiter)
 {
 	std::vector<std::string> result;
-	int len = text.length();
+	size_t len = text.length();
 	std::string word;
-	for (int nextCharPos = 0; nextCharPos < len; ++nextCharPos) {
+	for (size_t nextCharPos = 0; nextCharPos < len; ++nextCharPos) {
 		std::string possibleDelimiter{ text.substr(nextCharPos, delimiter.length()) };
 		char nextChar = text.at(nextCharPos);
 		if (possibleDelimiter != delimiter) {
