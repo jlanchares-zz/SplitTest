@@ -97,3 +97,9 @@ TEST(SplitTestCase, StringtDelimiterCornerCaseRighttDelimiterSeparationTest) {
 	EXPECT_EQ(result[0], "b,a");
 	EXPECT_EQ(result[1], "c");
 }
+
+TEST(SplitTestCase, StringtDelimiterCornerCaseRighttDelimiterAsFullTextTest) {
+	std::vector<std::string> result = SplitTest::split(",,,,a", ",,,,");
+	EXPECT_EQ(result.size(), 1);
+	EXPECT_EQ(result[0], "a");
+}
