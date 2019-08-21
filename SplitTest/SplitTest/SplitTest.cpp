@@ -13,7 +13,7 @@ std::vector<std::string> SplitTest::split(std::string text, std::string delimite
 	int len = text.length();
 	std::string word;
 	for (int nextCharPos = 0; nextCharPos < len; ++nextCharPos) {
-		std::string possibleDelimiter{ text.substr(nextCharPos, delimiter.length())};
+		std::string possibleDelimiter{ text.substr(nextCharPos, delimiter.length()) };
 		char nextChar = text.at(nextCharPos);
 		if (possibleDelimiter != delimiter) {
 			word.push_back(nextChar);
