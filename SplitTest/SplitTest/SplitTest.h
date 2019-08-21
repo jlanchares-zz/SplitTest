@@ -2,6 +2,6 @@
 class SplitTest
 {
 public:
-	static std::vector<std::string> split(std::string, char delimiter);
+	static std::vector<std::string> split(std::string text, char delimiter);
 };
 
