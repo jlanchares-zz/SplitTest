@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "SplitTest.h"
 
 TEST(SplitTestCase, OneSpaceDelimiterTest) {
 	std::vector<std::string> result = SplitTest::split("a b", ' ');
