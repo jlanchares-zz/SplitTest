@@ -1,0 +1,3 @@
+# Don't track content on folders
+Debug/
+Release/
